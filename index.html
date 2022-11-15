@@ -68,10 +68,10 @@
           <div class="d-flex p-2 justify-content-between" v-for="(elem, index) in contacts" :key="index">
             <div class="d-flex">
               <span class="me-3">
-                <img class="rounded-circle personal-width-50" src="./assets/img/avatar_io.jpg" alt="Immagine Profilo">
+                <img class="rounded-circle personal-width-50" :src=("./assets/img/avatar")+elem.avatar+(".jpg") alt="Immagine Contatto">
               </span>
               <span>
-                <div class="fw-semibold">{{contacts[index].name}}</div>
+                <div class="fw-semibold">{{elem.name}}</div>
                 <span class="personal-fs-08 personal-text-grey">Ultimo messaggio inviato</span>
               </span>
             </div>
