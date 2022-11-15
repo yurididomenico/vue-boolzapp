@@ -87,6 +87,10 @@ body
 {
   font-size: 0.7rem;
 }
+.personal-fs-06
+{
+  font-size: 0.6rem;
+}
 
 .personal-width-40
 {
@@ -96,6 +100,13 @@ body
 .personal-width-50
 {
   width: 50px;
+}
+
+
+/* |||||||||| HOVER |||||||||| */
+.messaggioChat:hover i
+{
+  display: block;
 }
 
 

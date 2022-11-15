@@ -16,6 +16,7 @@ Milestone 1
 var app = new Vue
 (
     {
+
         el: '#root',
         data: 
         {
@@ -201,7 +202,22 @@ var app = new Vue
             utenteSelezionato(index)
             {
                 this.utente = index
+            },
+
+            // Funzione per dividere data e ora
+            dataOra(date)
+            {
+                let arrayData = date.split(" ");
+                return arrayData;
+            },
+
+            // Funzione per dividere l'orario con i ":"
+            formatoOra(ora)
+            {
+                let orario = ora.split(":");
+                return orario;
             }
+
         }
     }
 )
