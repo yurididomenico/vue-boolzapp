@@ -19,6 +19,7 @@ var app = new Vue
         el: '#root',
         data: 
         {
+            utente: 0,
             contacts: 
             [
                 {
@@ -193,14 +194,17 @@ var app = new Vue
             ]
 
 
-                    },
+        },
 
-                    methods:
-                    {
-
-                    }
-                }
-            )
+        methods:
+        {
+            utenteSelezionato(index)
+            {
+                this.utente = index
+            }
+        }
+    }
+)
 
 
 

@@ -66,8 +66,7 @@
 
           <!-- Stampa contatto con v-for -->
           <!-- Contatto -->
-          <div class="d-flex p-2 justify-content-between border-top border-1" v-for="(elem, index) in contacts"
-            :key="index">
+          <div @click="utenteSelezionato(index)" class="d-flex p-2 justify-content-between border-top border-1" v-for="(elem, index) in contacts" :key="index">
             <div class="d-flex">
               <span class="me-3">
                 <img class="rounded-circle personal-width-50" :src=("./assets/img/avatar")+elem.avatar+(".jpg")
@@ -95,11 +94,11 @@
             <div class="d-flex px-2 pt-2 justify-content-between align-items-center personal-bg-grigio">
               <div class="d-flex">
                 <span class="me-3">
-                  <img class="rounded-circle personal-width-40" :src=("./assets/img/avatar")+contacts[0].avatar+(".jpg")
+                  <img class="rounded-circle personal-width-40" :src=("./assets/img/avatar")+contacts[utente].avatar+(".jpg")
                     alt="Immagine Contatto">
                 </span>
                 <span>
-                  <div class="fw-semibold">{{contacts[0].name}}</div>
+                  <div class="fw-semibold">{{contacts[utente].name}}</div>
                   <span class="personal-fs-08 personal-text-grey">Ultimo accesso oggi</span>
                 </span>
               </div>
@@ -112,10 +111,20 @@
             </div>
 
             <!-- Area messaggi -->
-            <div id="areaMessaggi"  class="d-flex flex-column px-5">
+            <!-- 
+            --------------------------------------------------------------
+              <div id="areaMessaggi"  class="d-flex flex-column px-5">
               <div class="personal-bg-lightgreen align-self-end w-25 p-2 m-3 rounded">{{contacts[0].messages[0].message}}</div>
               <div class="personal-bg-lightgreen align-self-end w-25 p-2 m-3 rounded">{{contacts[0].messages[1].message}}</div>
               <div class="bg-white w-25 p-2 m-3 rounded">{{contacts[0].messages[2].message}}</div>
+            </div> 
+            --------------------------------------------------------------
+            -->
+
+            <!-- Area messaggi -->
+            
+            <div id="areaMessaggi"  class="d-flex flex-column px-5">
+              <div v-for="(elem, index) in contacts[0].messages" :class="(elem.status == 'sent') ? 'personal-bg-lightgreen align-self-end' : 'bg-white' " class="w-25 p-2 m-3 rounded">{{elem.message}}</div>
             </div>
           </div>
 
