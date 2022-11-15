@@ -90,40 +90,45 @@
       <div id="areaDestra" class="flex-grow-1 bg-light">
 
         <div class="d-flex flex-column justify-content-between h-100">
-          <!-- Contatto -->
-          <div class="d-flex px-2 pt-2 justify-content-between align-items-center personal-bg-grigio">
-            <div class="d-flex">
-              <span class="me-3">
-                <img class="rounded-circle personal-width-40" :src=("./assets/img/avatar")+contacts[0].avatar+(".jpg")
-                  alt="Immagine Contatto">
-              </span>
-              <span>
-                <div class="fw-semibold">{{contacts[0].name}}</div>
-                <span class="personal-fs-08 personal-text-grey">Ultimo accesso oggi</span>
-              </span>
-            </div>
-
-            <div class="pe-2 personal-text-grey">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <i class="fa-solid fa-paperclip mx-3"></i>
-              <i class="fa-solid fa-ellipsis-vertical"></i>
-            </div>
-          </div>
-
-          <!-- Div 2 -->
           <div>
+            <!-- Contatto -->
+            <div class="d-flex px-2 pt-2 justify-content-between align-items-center personal-bg-grigio">
+              <div class="d-flex">
+                <span class="me-3">
+                  <img class="rounded-circle personal-width-40" :src=("./assets/img/avatar")+contacts[0].avatar+(".jpg")
+                    alt="Immagine Contatto">
+                </span>
+                <span>
+                  <div class="fw-semibold">{{contacts[0].name}}</div>
+                  <span class="personal-fs-08 personal-text-grey">Ultimo accesso oggi</span>
+                </span>
+              </div>
+
+              <div class="pe-2 personal-text-grey">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-paperclip mx-3"></i>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+            </div>
+
             <!-- Area messaggi -->
+            <div id="areaMessaggi"  class="d-flex flex-column px-5">
+              <div class="personal-bg-lightgreen align-self-end w-25 p-2 m-3 rounded">{{contacts[0].messages[0].message}}</div>
+              <div class="personal-bg-lightgreen align-self-end w-25 p-2 m-3 rounded">{{contacts[0].messages[1].message}}</div>
+              <div class="bg-white w-25 p-2 m-3 rounded">{{contacts[0].messages[2].message}}</div>
+            </div>
           </div>
 
           <!-- Div 3 -->
           <div id="areaChat" class="d-flex justify-content-between align-items-center px-4 py-2">
             <!-- Chat -->
             <i class="fa-regular fa-face-smile ms-2 personal-text-grey"></i>
-            
+
             <div class="input-group mx-5">
-              <input type="text" class="form-control flex-grow-1" placeholder="Scrivi un messaggio" aria-label="Username" aria-describedby="basic-addon1">
+              <input type="text" class="form-control flex-grow-1" placeholder="Scrivi un messaggio"
+                aria-label="Username" aria-describedby="basic-addon1">
             </div>
-            
+
             <i class="fa-solid fa-microphone me-2 personal-text-grey"></i>
           </div>
 
