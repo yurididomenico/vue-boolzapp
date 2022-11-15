@@ -16,7 +16,7 @@ img
 }
 a
 {
-  color: black;
+  color: inherit;
 }
 /* |||||||||| INIZIO |||||||||| */
 body
@@ -37,20 +37,30 @@ body
   height: 90%;
   width: 80%;
 }
-/* |||||||||| HEADER |||||||||| */
 
+.personal-bg-azzurrino
+{
+  background-color: #8edafc;
+}
+.personal-text-azzurrino
+{
+  color: #8edafc;
+}
 
+.personal-text-grey
+{
+  color: #b1b1b1;
+}
 
-/* |||||||||| NAV |||||||||| */
+.personal-fs-08
+{
+  font-size: 0.8rem;
+}
 
-
-
-/* |||||||||| MAIN |||||||||| */
-
-
-
-/* |||||||||| FOOTER |||||||||| */
-
+.personal-width-
+{
+  width: 40px;
+}
 
 
 /* |||||||||| AREA TEST |||||||||| */
