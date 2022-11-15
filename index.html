@@ -22,17 +22,17 @@
   <div id="root" class="d-flex justify-content-center align-items-center ">
     <!-- Blocco centrale -->
     <div id="corpoCentrale" class="d-flex">
-      <div class="w-25 flex-col">
+      <div class="w-25 d-flex flex-column">
 
         <!-- Area Profilo -->
         <div class="d-flex justify-content-between align-items-center pe-4">
           <div class="d-flex align-items-center p-2">
             <span class="me-3">
-              <img class="rounded-circle personal-width-" src="./assets/img/avatar_io.jpg" alt="Immagine Profilo">
+              <img class="rounded-circle personal-width-40" src="./assets/img/avatar_io.jpg" alt="Immagine Profilo">
             </span>
             <span class="fw-semibold">Peppina</span>
           </div>
-          
+
           <div class="personal-text-grey">
             <i class="fa-solid fa-circle-notch"></i>
             <i class="fa-solid fa-message px-3"></i>
@@ -42,7 +42,8 @@
 
         <!-- Area Notifiche -->
         <div id="areaNotifiche" class="d-flex align-items-center personal-bg-azzurrino p-2">
-          <span class="bg-white rounded-circle p-2 me-3"><i class="fa-solid fa-bell-slash personal-text-azzurrino"></i></span>
+          <span class="bg-white rounded-circle p-2 me-3"><i
+              class="fa-solid fa-bell-slash personal-text-azzurrino"></i></span>
           <span class="mb-0">
             <span class="d-block personal-fs-08 fw-semibold">Ricevi notifiche di nuovi messaggi</span>
             <a href="#" class="personal-fs-08">Attiva notifiche desktop</a>
@@ -50,18 +51,69 @@
         </div>
 
         <!-- Area Contatti -->
-        <div>
+        <div class="personal-bg-grigiochiaro">
           <div class="input-group p-2">
-            <span class="input-group-text bg-white border-0 rounded-0" id="basic-addon1"><i class="fa-solid fa-magnifying-glass personal-text-grey"></i></span>
-            <input type="text" class="form-control border-0 rounded-0" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            <!-- Search -->
+            <span class="input-group-text bg-white border-0 rounded-0" id="basic-addon1">
+              <i class="fa-solid fa-magnifying-glass personal-text-grey"></i>
+            </span>
+            <input type="text" class="form-control border-0 rounded-0" placeholder="Username" aria-label="Username"
+              aria-describedby="basic-addon1">
           </div>
-
-          
-
         </div>
 
-        <div class="bg-white">
-          d
+        <div class="flex-grow-1 overflow-auto bg-white">
+
+          <!-- Contatto -->
+          <div class="d-flex p-2 justify-content-between" v-for="(elem, index) in contacts" :key="index">
+            <div class="d-flex">
+              <span class="me-3">
+                <img class="rounded-circle personal-width-50" src="./assets/img/avatar_io.jpg" alt="Immagine Profilo">
+              </span>
+              <span>
+                <div class="fw-semibold">{{contacts[index].name}}</div>
+                <span class="personal-fs-08 personal-text-grey">Ultimo messaggio inviato</span>
+              </span>
+            </div>
+
+            <!-- ora -->
+            <span class="personal-fs-07 personal-text-grey">12:00</span>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
       </div>
 

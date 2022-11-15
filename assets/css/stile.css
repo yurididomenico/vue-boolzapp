@@ -46,20 +46,42 @@ body
 {
   color: #8edafc;
 }
+.personal-bg-grigio
+{
+  background-color: #e9ebeb;
+}
+.personal-bg-grigiochiaro
+{
+  background-color: #fafafa;
+}
 
 .personal-text-grey
 {
   color: #b1b1b1;
 }
+.personal-text-lightgrey 
+{
+  color: #fafafa; 
+} 
+
 
 .personal-fs-08
 {
   font-size: 0.8rem;
 }
+.personal-fs-07
+{
+  font-size: 0.7rem;
+}
 
-.personal-width-
+.personal-width-40
 {
   width: 40px;
+}
+
+.personal-width-50
+{
+  width: 50px;
 }
 
 
