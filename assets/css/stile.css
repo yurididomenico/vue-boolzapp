@@ -19,8 +19,24 @@ a
   color: black;
 }
 /* |||||||||| INIZIO |||||||||| */
+body
+{
+  background-image: linear-gradient(#009688 15%, #d8dbd5 15%);
+  background-repeat: no-repeat;
+  height: 100vh;
+}
 
+#root
+{
+  height: 100%;
+}
 
+#corpoCentrale
+{
+  background-color: #eaeaea;
+  height: 90%;
+  width: 80%;
+}
 /* |||||||||| HEADER |||||||||| */
 
 
