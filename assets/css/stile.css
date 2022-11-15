@@ -33,9 +33,13 @@ body
 
 #corpoCentrale
 {
-  background-color: #eaeaea;
   height: 90%;
   width: 80%;
+}
+
+#areaDestra
+{
+  background-image: url('../img/mine.jpg');
 }
 
 .personal-bg-azzurrino
@@ -48,7 +52,7 @@ body
 }
 .personal-bg-grigio
 {
-  background-color: #e9ebeb;
+  background-color: #eaeaea;
 }
 .personal-bg-grigiochiaro
 {
