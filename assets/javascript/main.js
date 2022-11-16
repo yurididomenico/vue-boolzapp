@@ -209,13 +209,21 @@ var app = new Vue
 
             sendMessage()
             {
+                //Funzione per prendere data e ora 
+                let d = new Date();
+                let dataAttuale = d.getDate() + '/' + d.getMonth() + '/' + d.getFullYear();
+                let oraAttuale = d.getHours() + ':' + d.getMinutes();
+                console.log(dataAttuale + ' ' + oraAttuale);
+
+                //Definizione oggetto con data e ora presa dinamicamente
                 let nuovoMessaggio =
                 {
-                    date: '10/02/2022 15:45:55',
+                    date: `${dataAttuale} ${oraAttuale}`,
                     message: this.testoMessaggio,
                     status: 'sent'
                 }
                 
+                //Controllo se il campo input è vuoto (true: mando messaggio. false: non mando messaggio)
                 if(this.testoMessaggio != "")
                 {
                     this.contacts[this.utente].messages.push(nuovoMessaggio)
