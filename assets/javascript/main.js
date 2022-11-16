@@ -20,6 +20,7 @@ var app = new Vue
         el: '#root',
         data: 
         {
+            ricercaContatto: "",
             testoMessaggio: "",
             utente: 0,
             contacts: 
@@ -198,7 +199,21 @@ var app = new Vue
 
         },
 
-        
+        beforeUpdate()
+        {
+            this.contacts.forEach((element, index) =>
+            {
+                if(this.ricercaContatto == "" || this.contacts[index].name.includes(this.ricercaContatto))
+                {
+                    this.contacts[index].visible = true;
+                }
+                else
+                {
+                    this.contacts[index].visible = false;
+                }
+            });
+            console.log(this.ricercaContatto)
+        },
 
         methods:
         {
