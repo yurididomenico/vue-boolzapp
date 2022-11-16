@@ -103,10 +103,20 @@ body
 }
 
 
+
 /* |||||||||| HOVER |||||||||| */
-.messaggioChat:hover i
+
+
+.fa-solid:hover,
+.messaggioChat:hover
 {
-  display: block;
+  cursor: pointer;
+}
+
+
+.fa-solid:hover
+{
+  color: black;
 }
 
 

@@ -20,6 +20,7 @@ var app = new Vue
         el: '#root',
         data: 
         {
+            testoMessaggio: "",
             utente: 0,
             contacts: 
             [
@@ -49,7 +50,7 @@ var app = new Vue
                 {
                     name: 'Fabio',
                     avatar: '_2',
-                    visible: true,
+                    visible: true,                    
                     messages: 
                     [
                         {
@@ -72,7 +73,7 @@ var app = new Vue
                 {
                     name: 'Samuele',
                     avatar: '_3',
-                    visible: true,
+                    visible: true,                    
                     messages: 
                     [
                         {
@@ -95,7 +96,7 @@ var app = new Vue
                 {
                     name: 'Alessandro B.',
                     avatar: '_4',
-                    visible: true,
+                    visible: true,                    
                     messages: 
                     [
                         {
@@ -113,7 +114,7 @@ var app = new Vue
                 {
                     name: 'Alessandro L.',
                     avatar: '_5',
-                    visible: true,
+                    visible: true,                    
                     messages: 
                     [
                         {
@@ -131,7 +132,7 @@ var app = new Vue
                 {
                     name: 'Claudia',
                     avatar: '_6',
-                    visible: true,
+                    visible: true,                    
                     messages: 
                     [
                         {
@@ -154,7 +155,7 @@ var app = new Vue
                 {
                     name: 'Federico',
                     avatar: '_7',
-                    visible: true,
+                    visible: true,                    
                     messages: 
                     [
                         {
@@ -172,7 +173,7 @@ var app = new Vue
                 {
                     name: 'Davide',
                     avatar: '_8',
-                    visible: true,
+                    visible: true,                    
                     messages: 
                     [
                         {
@@ -197,11 +198,30 @@ var app = new Vue
 
         },
 
+        
+
         methods:
         {
             utenteSelezionato(index)
             {
-                this.utente = index
+                this.utente = index;
+            },
+
+            sendMessage()
+            {
+                let nuovoMessaggio =
+                {
+                    date: '10/02/2022 15:45:55',
+                    message: this.testoMessaggio,
+                    status: 'sent'
+                }
+                
+                if(this.testoMessaggio != "")
+                {
+                    this.contacts[this.utente].messages.push(nuovoMessaggio)
+                }
+                
+                this.testoMessaggio = ""
             },
 
             // Funzione per dividere data e ora
