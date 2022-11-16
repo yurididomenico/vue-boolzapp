@@ -201,6 +201,7 @@ var app = new Vue
 
         beforeUpdate()
         {
+            //Intercettare testo nella searchbar
             this.contacts.forEach((element, index) =>
             {
                 if(this.ricercaContatto == "" || this.contacts[index].name.includes(this.ricercaContatto))
@@ -212,7 +213,11 @@ var app = new Vue
                     this.contacts[index].visible = false;
                 }
             });
-            console.log(this.ricercaContatto)
+            
+            // console.log(this.ricercaContatto.charAt(0));
+            // console.log(this.ricercaContatto.charAt(0).toUpperCase());
+
+            
         },
 
         methods:
@@ -269,19 +274,40 @@ var app = new Vue
                 this.testoMessaggio = ""
             },
 
-            // Funzione per dividere data e ora
-            dataOra(date)
+            splitDataOra(data)
             {
-                let arrayData = date.split(" ");
-                return arrayData;
-            },
+                // Divido Data e Ora
+                data = data.split(" ");
+
+                // Divido l'orario
+                data = data[1].split(":");
+                
+                // Assegno il primo elemento splittato (ora) con il secondo (minuti)
+                data = `${data[0]}:${data[1]}`
+                
+                return data;
+            }
+
+
+
+
+
+
+
+
+            // Funzione per dividere data e ora
+            // dataOra(date)
+            // {
+            //     let arrayData = date.split(" ");
+            //     return arrayData;
+            // },
 
             // Funzione per dividere l'orario con i ":"
-            formatoOra(ora)
-            {
-                let orario = ora.split(":");
-                return orario;
-            }
+            // formatoOra(ora)
+            // {
+            //     let orario = ora.split(":");
+            //     return orario;
+            // }
 
         }
     }
