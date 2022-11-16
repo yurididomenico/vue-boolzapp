@@ -207,6 +207,23 @@ var app = new Vue
                 this.utente = index;
             },
 
+            receivedMessage()
+            {
+                let d = new Date();
+                let dataAttuale = d.getDate() + '/' + d.getMonth() + '/' + d.getFullYear();
+                let oraAttuale = d.getHours() + ':' + d.getMinutes();
+                console.log(dataAttuale + ' ' + oraAttuale);
+
+                let nuovoMessaggio =
+                {
+                    date: `${dataAttuale} ${oraAttuale}`,
+                    message: "Ah ok",
+                    status: 'received'
+                }
+
+                this.contacts[this.utente].messages.push(nuovoMessaggio)
+            },
+
             sendMessage()
             {
                 //Funzione per prendere data e ora 
@@ -229,6 +246,11 @@ var app = new Vue
                     this.contacts[this.utente].messages.push(nuovoMessaggio)
                 }
                 
+                setTimeout(() => 
+                {
+                    this.receivedMessage();
+                }, 1000);
+
                 this.testoMessaggio = ""
             },
 
