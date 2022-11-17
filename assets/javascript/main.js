@@ -216,7 +216,9 @@ var app = new Vue
             
             // console.log(this.ricercaContatto.charAt(0));
             // console.log(this.ricercaContatto.charAt(0).toUpperCase());
-
+            
+            
+            
             
         },
 
@@ -287,12 +289,21 @@ var app = new Vue
                 data = `${data[0]}:${data[1]}`
 
                 return data;
+            },
+
+
+            test(index)
+            {
+                console.log("Prima: " + this.contacts[this.utente].messages[index])
+
+                this.contacts[this.utente].messages.splice(index, 1)
+                // delete this.contacts[this.utente].messages[index]
+                
+                console.log("Dopo: " + this.contacts[this.utente].messages[index])
+
             }
 
-
-
-
-
+            
 
 
 
