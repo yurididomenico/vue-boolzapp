@@ -120,9 +120,19 @@ body
 }
 
 
+
+
 /* |||||||||| AREA TEST |||||||||| */
 
+.messaggioDropdown
+{
+  display: none;
+}
 
+.messaggioChat:hover .messaggioDropdown
+{
+  display: block;
+}
 
 
 /* |||||||||| AREA TEST |||||||||| */
