@@ -201,7 +201,7 @@ var app = new Vue
 
         beforeUpdate()
         {
-            //Intercettare testo nella searchbar
+            
             this.contacts.forEach((element, index) =>
             {
                 if(this.ricercaContatto == "" || this.contacts[index].name.includes(this.ricercaContatto))
@@ -248,6 +248,7 @@ var app = new Vue
             {
                 //Funzione per prendere data e ora 
                 let d = new Date();
+                console.log(d)
                 let dataAttuale = d.getDate() + '/' + d.getMonth() + '/' + d.getFullYear();
                 let oraAttuale = d.getHours() + ':' + d.getMinutes();
                 console.log(dataAttuale + ' ' + oraAttuale);
@@ -284,7 +285,7 @@ var app = new Vue
                 
                 // Assegno il primo elemento splittato (ora) con il secondo (minuti)
                 data = `${data[0]}:${data[1]}`
-                
+
                 return data;
             }
 

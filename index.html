@@ -66,7 +66,9 @@
 
           <!-- Stampa contatto con v-for -->
           <!-- Contatto -->
-          <div @click="utenteSelezionato(index)" class="d-flex p-2 justify-content-between border-top border-1" v-for="(elem, index) in contacts" v-if="elem.visible == true" :key="index" :class="(elem.test == true) ? 'bg-danger' : ''">
+          <div @click="utenteSelezionato(index)" class="d-flex p-2 justify-content-between border-top border-1"
+            v-for="(elem, index) in contacts" v-if="elem.visible == true" :key="index"
+            :class="(elem.test == true) ? 'bg-danger' : ''">
             <div class="d-flex">
               <span class="me-3">
                 <img class="rounded-circle personal-width-50" :src=("./assets/img/avatar")+elem.avatar+(".jpg")
@@ -94,8 +96,8 @@
             <div class="d-flex px-2 pt-2 justify-content-between align-items-center personal-bg-grigio sticky-top">
               <div class="d-flex">
                 <span class="me-3">
-                  <img class="rounded-circle personal-width-40" :src=("./assets/img/avatar")+contacts[utente].avatar+(".jpg")
-                    alt="Immagine Contatto">
+                  <img class="rounded-circle personal-width-40"
+                    :src=("./assets/img/avatar")+contacts[utente].avatar+(".jpg") alt="Immagine Contatto">
                 </span>
                 <span>
                   <div class="fw-semibold">{{contacts[utente].name}}</div>
@@ -110,14 +112,36 @@
               </div>
             </div>
 
-            
+
 
             <!-- Area messaggi -->
-            <div id="areaMessaggi"  class="d-flex flex-column px-5">
-              <div v-for="(elem, index) in contacts[utente].messages" :class="(elem.status == 'sent') ? 'personal-bg-lightgreen align-self-end' : 'bg-white' " class="messaggioChat w-25 p-2 m-3 rounded d-flex justify-content-between align-items-center">
+            <div id="areaMessaggi" class="d-flex flex-column px-5">
+              <div v-for="(elem, index) in contacts[utente].messages"
+                :class="(elem.status == 'sent') ? 'personal-bg-lightgreen align-self-end' : 'bg-white' "
+                class="messaggioChat w-25 p-2 m-3 rounded d-flex justify-content-between align-items-center">
                 {{elem.message}}
                 <span class="d-flex flex-column ">
-                  <i class="fa-solid fa-chevron-down personal-text-grey d-none"></i>
+
+                  <!-- Dropdown -->
+                  <div class="dropdown">
+                    <button class="btn border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="fa-solid fa-chevron-down personal-text-grey"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href="#">
+                          <i class="fa-solid fa-circle-info"></i><span class="fs-6">Informazioni</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">
+                          <i class="fa-solid fa-trash"></i><span class="fs-6">Elimina messaggio</span>
+                        </a>
+                      </li>
+
+                    </ul>
+                  </div>
+
                   <span class="personal-fs-06"></span>
                   <span class="personal-fs-06">{{splitDataOra(elem.date)}}</span>
                   <!-- <span class="personal-fs-06">{{`${formatoOra(dataOra(elem.date)[1])[0]}:${formatoOra(dataOra(elem.date)[1])[1]}`}}</span> -->
@@ -125,16 +149,38 @@
               </div>
             </div>
           </div>
-       
+
+
+          <!-- ------------------------------------------------------ -->
+
+
+
+          <!-- ------------------------------------------------------ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
           <!-- Chat -->
           <div id="areaChat" class="d-flex justify-content-between align-items-center px-4 py-2 sticky-bottom">
-            
+
             <i class="fa-regular fa-face-smile ms-2 personal-text-grey"></i>
 
             <div class="input-group mx-5">
               <input type="text" class="form-control flex-grow-1" placeholder="Scrivi un messaggio"
-                aria-label="Username" aria-describedby="basic-addon1" v-model="testoMessaggio" @keyup.enter="sendMessage()">
+                aria-label="Username" aria-describedby="basic-addon1" v-model="testoMessaggio"
+                @keyup.enter="sendMessage()">
             </div>
 
             <i class="fa-solid fa-microphone me-2 personal-text-grey"></i>
